@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/tvMealEntryName"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/meal_2"
+        android:gravity="center"
+        android:text="Lunch"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- Calories -->
+    <TextView
+        android:id="@+id/tvMealEntryCaloriesLabel"
+        android:layout_width="0dp"
+        android:layout_height="76dp"
+        android:gravity="center_vertical"
+        android:paddingEnd="10dp"
+        android:text="Calories"
+        android:textAlignment="viewEnd"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvMealEntryCaloriesValue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMealEntryName"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvMealEntryCaloriesValue"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:text="XXXX"
+        android:textColor="@color/lightgray"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMealEntryCaloriesLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvMealEntryCaloriesLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvMealEntryCaloriesLabel" />
+
+
+    <!-- Macros -->
+    <TextView
+        android:id="@+id/tvMealEntryCarbsLabel"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:gravity="bottom"
+        android:text="Carbs"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvMealEntryFatsLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMealEntryCaloriesLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvMealEntryFatsLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:text="Fats"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMealEntryCarbsLabel"
+        app:layout_constraintEnd_toStartOf="@+id/tvMealEntryProteinLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvMealEntryCarbsLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvMealEntryCarbsLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvMealEntryProteinLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:text="Protein"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMealEntryCarbsLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvMealEntryFatsLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvMealEntryCarbsLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvMealEntryCarbsValue"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="top"
+        android:text="XX"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvMealEntryFatsLabel"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMealEntryFatsLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvMealEntryFatsValue"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:text="XX"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMealEntryCarbsValue"
+        app:layout_constraintEnd_toStartOf="@+id/tvMealEntryProteinLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvMealEntryCarbsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvMealEntryCarbsLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvMealEntryProteinValue"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:text="XX"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMealEntryFatsValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvMealEntryFatsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvMealEntryFatsLabel"
+        tools:ignore="RtlCompat" />
+
+
+    <!-- Food Entry Recycler -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMealEntryFoodEntryList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/meal_2_3"
+        app:layout_constraintBottom_toTopOf="@+id/btnMealEntryAddFoodEntry"
+        app:layout_constraintTop_toBottomOf="@+id/tvMealEntryFatsValue" />
+
+
+    <!-- Add Food Entry Button -->
+    <Button
+        android:id="@+id/btnMealEntryAddFoodEntry"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:backgroundTint="@color/meal_2"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="Add food entry"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

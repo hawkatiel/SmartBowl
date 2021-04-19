@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp">
+
+    <!-- Date -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tvFoodEntryName"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/meal_2_3"
+        android:gravity="center"
+        android:text="Enter food..."
+        android:textColor="@color/lightgray"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- Serving Size -->
+    <TextView
+        android:id="@+id/tvFoodEntryServingLabel"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:gravity="bottom"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:text="Serving Size"
+        android:textAlignment="viewEnd"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryName"
+        tools:ignore="RtlCompat" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tvFoodEntryServingValue"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:paddingStart="10dp"
+        android:text="XXXX"
+        android:textColor="@color/lightgray"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryServingLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodEntryServingLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvFoodEntryServingLabel" />
+
+    <TextView
+        android:id="@+id/tvFoodEntryServingLabelUnit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:text="g"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryServingValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodEntryServingValue"
+        app:layout_constraintTop_toTopOf="@+id/tvFoodEntryServingValue"
+        tools:ignore="RtlCompat" />
+
+
+    <!-- Calories -->
+    <TextView
+        android:id="@+id/tvFoodEntryCaloriesLabel"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="bottom"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:text="Calories"
+        android:textAlignment="viewEnd"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvFoodEntryCaloriesValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryServingLabel"
+        tools:ignore="RtlCompat" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tvFoodEntryCaloriesValue"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:paddingStart="10dp"
+        android:paddingTop="5dp"
+        android:text="XXXX"
+        android:textColor="@color/lightgray"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryCaloriesLabel"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/tvFoodEntryCaloriesLabel" />
+
+    <TextView
+        android:id="@+id/tvFoodEntryCaloriesLabelUnit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:text="cal"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryCaloriesLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodEntryCaloriesValue"
+        app:layout_constraintTop_toTopOf="@+id/tvFoodEntryCaloriesLabel"
+        tools:ignore="RtlCompat" />
+
+
+    <!-- Macros -->
+    <TextView
+        android:id="@+id/tvFoodEntryCarbsLabel"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:gravity="bottom"
+        android:text="Carbs"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryCaloriesLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvFoodEntryFatsLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:text="Fats"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryCarbsLabel"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/tvFoodEntryCarbsLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvFoodEntryProteinLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:text="Protein"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryCarbsLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/tvFoodEntryCarbsLabel"
+        tools:ignore="RtlCompat" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tvFoodEntryCarbsValue"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:gravity="top"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryCarbsLabel"
+        tools:ignore="RtlCompat" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tvFoodEntryFatsValue"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryCarbsValue"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryFatsLabel"
+        tools:ignore="RtlCompat" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tvFoodEntryProteinValue"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryFatsValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryProteinLabel"
+        tools:ignore="RtlCompat" />
+
+
+    <!-- Auto Entry Button -->
+    <Button
+        android:id="@+id/btnFoodEntryAutoAdd"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:backgroundTint="@color/meal_2"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="Smart Add"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/btnFoodEntrySave"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:backgroundTint="@color/meal_2"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="Save Entry"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"  />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnFoodEntryAutoAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+
+    <TextView
+        android:id="@+id/tvGlabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="g"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryCarbsValue"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodEntryCarbsValue"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryCarbsLabel" />
+
+    <TextView
+        android:id="@+id/tvGlabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="g"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryCarbsValue"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodEntryFatsValue"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryCarbsLabel" />
+
+    <TextView
+        android:id="@+id/tvGlabel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="g"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryCarbsValue"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodEntryProteinValue"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryCarbsLabel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

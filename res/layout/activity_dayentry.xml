@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/tvDayEntryDate"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:text="1/1/2001"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- Calories -->
+    <TextView
+        android:id="@+id/tvDayEntryCaloriesLabel"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:paddingEnd="10dp"
+        android:text="Calories"
+        android:textAlignment="viewEnd"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDayEntryCaloriesValue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryDate"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryCaloriesValue"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:text="XXXX"
+        android:textColor="@color/lightgray"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvDayEntryCaloriesLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryDate" />
+
+
+    <!-- Macros -->
+    <TextView
+        android:id="@+id/tvDayEntryCarbsLabel"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="bottom"
+        android:text="Carbs"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDayEntryFatsLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryCaloriesLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryFatsLabel"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="bottom"
+        android:text="Fats"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDayEntryProteinLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvDayEntryCarbsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryCaloriesLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryProteinLabel"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="bottom"
+        android:text="Protein"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvDayEntryFatsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryCaloriesLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryCarbsValue"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="top"
+        android:text="XX"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDayEntryFatsLabel"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryFatsLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryFatsValue"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="top"
+        android:text="XX"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDayEntryProteinLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvDayEntryCarbsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryFatsLabel"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryProteinValue"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="top"
+        android:text="XX"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvDayEntryFatsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryFatsLabel"
+        tools:ignore="RtlCompat" />
+
+
+    <!-- Meal Buttons -->
+    <Button
+        android:id="@+id/btnDayEntryBreakfast"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:backgroundTint="@color/meal_1"
+        android:stateListAnimator="@null"
+        android:text="Breakfast"
+        android:textSize="32sp"
+        android:textAllCaps="false"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDayEntryLunch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDayEntryBreakfastCalValue"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryFatsValue" />
+
+    <Button
+        android:id="@+id/btnDayEntryLunch"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:backgroundTint="@color/meal_2"
+        android:stateListAnimator="@null"
+        android:text="Lunch"
+        android:textSize="32sp"
+        android:textAllCaps="false"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDayEntryDinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDayEntryLunchCalValue"
+        app:layout_constraintTop_toBottomOf="@+id/btnDayEntryBreakfast" />
+
+    <Button
+        android:id="@+id/btnDayEntryDinner"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:backgroundTint="@color/meal_3"
+        android:text="Dinner"
+        android:textSize="32sp"
+        android:textAllCaps="false"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDayEntrySnacks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDayEntryDinnerCalValue"
+        app:layout_constraintTop_toBottomOf="@+id/btnDayEntryLunch" />
+
+    <Button
+        android:id="@+id/btnDayEntrySnacks"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:backgroundTint="@color/meal_4"
+        android:text="Snacks"
+        android:textSize="32sp"
+        android:textAllCaps="false"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDayEntrySnacksCalValue"
+        app:layout_constraintTop_toBottomOf="@+id/btnDayEntryDinner" />
+
+
+    <!-- Meal Calories -->
+    <TextView
+        android:id="@+id/tvDayEntryBreakfastCalValue"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:background="@color/meal_1_2"
+        android:text="XXX"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDayEntryBreakfastCalLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnDayEntryBreakfast"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryBreakfastCalLbl"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:background="@color/meal_1_2"
+        android:text="cal"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDayEntryBreakfast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryBreakfastCalValue"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryLunchCalValue"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:background="@color/meal_2_2"
+        android:text="XXX"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDayEntryLunchCalLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnDayEntryLunch"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryLunchCalLbl"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:background="@color/meal_2_2"
+        android:text="cal"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDayEntryLunch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryLunchCalValue"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryDinnerCalValue"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:background="@color/meal_3_2"
+        android:text="XXX"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDayEntryDinnerCalLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnDayEntryDinner"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntryDinnerCalLbl"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:background="@color/meal_3_2"
+        android:text="cal"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDayEntryDinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntryDinnerCalValue"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntrySnacksCalValue"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:background="@color/meal_4_2"
+        android:text="XXX"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDayEntrySnacksCalLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnDayEntrySnacks"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvDayEntrySnacksCalLbl"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:background="@color/meal_4_2"
+        android:text="cal"
+        android:textAlignment="center"
+        android:textColor="@color/lightgray"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDayEntrySnacks"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDayEntrySnacksCalValue"
+        tools:ignore="RtlCompat" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
