@@ -37,20 +37,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryName"
         tools:ignore="RtlCompat" />
-
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tvFoodEntryServingValue"
         android:layout_width="100dp"
         android:layout_height="0dp"
         android:gravity="bottom"
         android:paddingStart="10dp"
-        android:text="XXXX"
+        android:text="0"
         android:textColor="@color/lightgray"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryServingLabel"
         app:layout_constraintStart_toEndOf="@+id/tvFoodEntryServingLabel"
         app:layout_constraintTop_toTopOf="@+id/tvFoodEntryServingLabel" />
-
     <TextView
         android:id="@+id/tvFoodEntryServingLabelUnit"
         android:layout_width="0dp"
@@ -82,21 +80,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryServingLabel"
         tools:ignore="RtlCompat" />
-
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tvFoodEntryCaloriesValue"
         android:layout_width="100dp"
         android:layout_height="0dp"
-        android:gravity="top"
+        android:gravity="bottom"
         android:paddingStart="10dp"
         android:paddingTop="5dp"
-        android:text="XXXX"
+        android:text="0"
         android:textColor="@color/lightgray"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryCaloriesLabel"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/tvFoodEntryCaloriesLabel" />
-
     <TextView
         android:id="@+id/tvFoodEntryCaloriesLabelUnit"
         android:layout_width="0dp"
@@ -209,14 +205,12 @@
         android:id="@+id/btnFoodEntryAutoAdd"
         android:layout_width="0dp"
         android:layout_height="64dp"
-        android:backgroundTint="@color/meal_2"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:stateListAnimator="@null"
         android:text="Smart Add"
         android:textAllCaps="false"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
@@ -226,14 +220,12 @@
         android:id="@+id/btnFoodEntrySave"
         android:layout_width="0dp"
         android:layout_height="64dp"
-        android:backgroundTint="@color/meal_2"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:stateListAnimator="@null"
         android:text="Save Entry"
         android:textAllCaps="false"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

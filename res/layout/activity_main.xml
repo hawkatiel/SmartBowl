@@ -8,14 +8,14 @@
     android:background="@color/lightgreen">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/rvMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="49dp" />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btnMainAddDayEntry"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnAddDayEntry"
+        android:id="@+id/btnMainAddDayEntry"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:insetTop="0dp"
@@ -25,8 +25,8 @@
         android:textSize="25sp"
         android:textAlignment="center"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!--
