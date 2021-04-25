@@ -31,3 +31,4 @@ C:\Users\Rachel\AndroidStudioProjects\SmartBowlApp\app\src\main
                 Macronutrient values get updated on Activity creation, but not on resuming yet
                 Save Button successfully navigates back to Main but doesn't actually save data yet
                 
+                
