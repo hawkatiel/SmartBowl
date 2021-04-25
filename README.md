@@ -16,7 +16,9 @@ C:\Users\Rachel\AndroidStudioProjects\SmartBowlApp\app\src\main
                 Main
                         The background is a slightly deeper green.
                 DayEntry
-                        Save Button                
+                        Save Button  
+                MealEntry
+                        We change colors now!
         DayEntry & MealEntry class functions
                 Changed macronutrient totals to doubles instead of floats to make rounding easier
                 Helper function to recalculate macronutrient totals from respective Meal/Food lists
