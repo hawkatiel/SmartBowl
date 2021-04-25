@@ -27,7 +27,7 @@ class CameraActivity : AppCompatActivity() {
         // Action Bar Support
         val actionBar = supportActionBar
         actionBar!!.title = "Capture Food Picture"       // Set Action Bar title
-        actionBar.setDisplayHomeAsUpEnabled(true)   // Turn on Back Button
+        actionBar.setDisplayHomeAsUpEnabled(false)   // Turn on Back Button
 
         if (ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.CAMERA)
             == PackageManager.PERMISSION_DENIED)

@@ -1,18 +1,32 @@
 package com.example.smartbowlapp
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.content.Intent
-import android.widget.Button
+import java.io.Serializable
 
-class MealEntry : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mealentry)
+data class MealEntry(
+    // Basic Info
+    var mealName: String = "Enter food",
 
-        // Action Bar Support
-        val actionBar = supportActionBar
-        actionBar!!.title = "Meal Entry"       // Set Action Bar title
-        actionBar.setDisplayHomeAsUpEnabled(true)   // Turn on Back Button
+    // Macro info
+    var totalCalories: Double = 0.0,
+    var totalCarbs: Double = 0.0,
+    var totalFats: Double = 0.0,
+    var totalProtein: Double = 0.0,
+
+    // Food list info
+    var foodEntries: MutableList<FoodEntry> = mutableListOf<FoodEntry>()
+) : Serializable {
+
+    fun updateMealValues() {
+        totalCalories = 0.0
+        totalCarbs = 0.0
+        totalFats = 0.0
+        totalProtein = 0.0
+        foodEntries.forEach {
+            totalCalories += it.totalCalories
+            totalCarbs += it.totalCarbs
+            totalFats += it.totalFats
+            totalProtein += it.totalProtein
+        }
+
     }
 }

@@ -1,18 +1,51 @@
 package com.example.smartbowlapp
+import java.io.Serializable
+import kotlin.math.roundToLong
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.content.Intent
-import android.widget.Button
+data class DayEntry(
+    // Basic Info
+    var date: String = "New Entry",
 
-class DayEntry : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dayentry)
+    // Macro info
+    var totalCalories: Double = 0.0,
+    var totalCarbs: Double = 0.0,
+    var totalFats: Double = 0.0,
+    var totalProtein: Double = 0.0,
 
-        // Action Bar Support
-        val actionBar = supportActionBar
-        actionBar!!.title = "Day Entry"       // Set Action Bar title
-        actionBar.setDisplayHomeAsUpEnabled(true)   // Turn on Back Button
+    var mealEntries: MutableList<MealEntry> = mutableListOf<MealEntry>(
+        MealEntry("Breakfast"),
+        MealEntry("Lunch"),
+        MealEntry("Dinner"),
+        MealEntry("Snacks")
+    )
+
+
+) : Serializable {
+    fun updateAllValues() {
+        // Update Meal Totals first
+        mealEntries.forEach {
+            it.updateMealValues()
+        }
+
+        // Then update Day Totals
+        totalCalories = mealEntries[0].totalCalories +
+                mealEntries[1].totalCalories +
+                mealEntries[2].totalCalories +
+                mealEntries[3].totalCalories
+
+        totalCarbs = mealEntries[0].totalCarbs +
+                mealEntries[1].totalCarbs +
+                mealEntries[2].totalCarbs +
+                mealEntries[3].totalCarbs
+
+        totalFats = mealEntries[0].totalFats +
+                mealEntries[1].totalFats +
+                mealEntries[2].totalFats +
+                mealEntries[3].totalFats
+
+        totalProtein = mealEntries[0].totalProtein +
+                mealEntries[1].totalProtein +
+                mealEntries[2].totalProtein +
+                mealEntries[3].totalProtein
     }
 }
