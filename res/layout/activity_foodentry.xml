@@ -8,12 +8,12 @@
 
     <!-- Date -->
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tvFoodEntryName"
+        android:id="@+id/etFoodEntryName"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@color/meal_2_3"
         android:gravity="center"
-        android:text="Enter food..."
+        android:hint="Enter food"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -36,11 +36,11 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFoodEntryName"
+        app:layout_constraintTop_toBottomOf="@+id/etFoodEntryName"
         tools:ignore="RtlCompat" />
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tvFoodEntryServingValue"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="0dp"
         android:gravity="bottom"
         android:paddingStart="10dp"
@@ -84,7 +84,7 @@
         tools:ignore="RtlCompat" />
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tvFoodEntryCaloriesValue"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="0dp"
         android:gravity="bottom"
         android:paddingStart="10dp"

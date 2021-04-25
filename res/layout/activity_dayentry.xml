@@ -7,16 +7,18 @@
 
 
     <!-- Date -->
-    <TextView
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tvDayEntryDate"
-        android:layout_width="match_parent"
+        android:layout_width="240dp"
         android:layout_height="90dp"
-        android:gravity="center"
-        android:text="1/1/2001"
+        android:gravity="bottom"
+        android:hint="Enter Date"
         android:textSize="40sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlCompat" />
 
 
     <!-- Calories -->
@@ -183,7 +185,7 @@
     <Button
         android:id="@+id/btnDayEntryBreakfast"
         android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_height="74dp"
         android:backgroundTint="@color/meal_1"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -200,7 +202,7 @@
     <Button
         android:id="@+id/btnDayEntryLunch"
         android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_height="74dp"
         android:backgroundTint="@color/meal_2"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -217,7 +219,7 @@
     <Button
         android:id="@+id/btnDayEntryDinner"
         android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_height="74dp"
         android:backgroundTint="@color/meal_3"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -234,7 +236,7 @@
     <Button
         android:id="@+id/btnDayEntrySnacks"
         android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_height="74dp"
         android:backgroundTint="@color/meal_4"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -243,10 +245,25 @@
         android:textAllCaps="false"
         android:textSize="32sp"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnDayEntrySave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvDayEntrySnacksCalValue"
         app:layout_constraintTop_toBottomOf="@+id/btnDayEntryDinner" />
+
+    <Button
+        android:id="@+id/btnDayEntrySave"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="Save Entry"
+        android:textAllCaps="false"
+        android:textSize="26sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <!-- Meal Calories -->
