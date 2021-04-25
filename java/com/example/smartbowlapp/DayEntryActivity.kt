@@ -35,27 +35,28 @@ class DayEntryActivity : AppCompatActivity() {
          */
 
 
-        // Meal Buttons
+        // Meal Buttons. Passing the meal type as well.
         btnDayEntryBreakfast.setOnClickListener {
             Intent(this, MealEntryActivity::class.java).also {
+                it.putExtra("EXTRA_MEALTYPE", 1)
                 startActivity(it)
             }
         }
-
         btnDayEntryLunch.setOnClickListener {
             Intent(this, MealEntryActivity::class.java).also {
+                it.putExtra("EXTRA_MEALTYPE", 2)
                 startActivity(it)
             }
         }
-
         btnDayEntryDinner.setOnClickListener {
             Intent(this, MealEntryActivity::class.java).also {
+                it.putExtra("EXTRA_MEALTYPE", 3)
                 startActivity(it)
             }
         }
-
         btnDayEntrySnacks.setOnClickListener {
             Intent(this, MealEntryActivity::class.java).also {
+                it.putExtra("EXTRA_MEALTYPE", 4)
                 startActivity(it)
             }
         }
@@ -63,7 +64,7 @@ class DayEntryActivity : AppCompatActivity() {
         // Save
         btnDayEntrySave.setOnClickListener {
             currentDate.date = tvDayEntryDate.text.toString()
-            
+
             finish()
         }
 
