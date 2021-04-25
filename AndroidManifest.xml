@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartBowlApp">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +23,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DayEntry" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".MealEntry" android:parentActivityName=".DayEntry"/>
-        <activity android:name=".FoodEntry" android:parentActivityName=".MealEntry" />
-        <activity android:name=".CameraActivity" android:parentActivityName=".FoodEntry"></activity>
+
+        <activity
+            android:name=".DayEntryActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MealEntryActivity"
+            android:parentActivityName=".DayEntryActivity" />
+        <activity
+            android:name=".FoodEntryActivity"
+            android:parentActivityName=".MealEntryActivity"></activity>
+        <activity
+            android:name=".CameraActivity"
+            android:parentActivityName=".FoodEntryActivity" />
     </application>
 
 </manifest>
