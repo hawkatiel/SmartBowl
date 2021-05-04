@@ -9,6 +9,12 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 
+// File W/R imports
+import android.content.Context
+import android.util.Log
+import java.io.*
+
+
 class MainActivity : AppCompatActivity(), OnDayEditClickListener, OnDayDeleteClickListener {
 
     var dayLog = ArrayList<DayEntry>()
@@ -17,7 +23,7 @@ class MainActivity : AppCompatActivity(), OnDayEditClickListener, OnDayDeleteCli
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        Log.d("out", "All set...")
 
         // Action Bar Support
         val actionBar = supportActionBar
@@ -28,7 +34,6 @@ class MainActivity : AppCompatActivity(), OnDayEditClickListener, OnDayDeleteCli
         dayLog.add(DayEntry(date = "4/20/2021"))
         dayLog.add(DayEntry(date = "4/21/2021"))
         dayLog.add(DayEntry(date = "4/22/2021"))
-        println("Back to Main.")
         dayLog[0].mealEntries[0].foodEntries.add(FoodEntry(servingSize = 210.0, foodName = "Mashy Potatoes", totalCalories = 237.3654654, totalCarbs = 35.3, totalFats = 8.9, totalProtein = 3.9))
 
 
@@ -39,17 +44,19 @@ class MainActivity : AppCompatActivity(), OnDayEditClickListener, OnDayDeleteCli
         dayAdapter.notifyDataSetChanged()
 
 
-        // Add Day Entry Button.
+        // AddDayEntry Button.
         // Setting the button's onClick listener to create an Intent to open Meal Entry Activity. In the same motion, it executes the Intent.
         val btnMainAddDayEntry = findViewById<Button>(R.id.btnMainAddDayEntry)
         btnMainAddDayEntry.setOnClickListener {
             dayLog.add(DayEntry(date = "4/25/2021"))
             Intent(this, DayEntryActivity::class.java).also {
                 it.putExtra("EXTRA_DAY", dayLog[dayLog.size-1])
+                it.putExtra("EXTRA_POSITION", dayLog.size-1)
                 startActivity(it)
             }
         }
     }
+
 
     override fun onResume() {
         super.onResume()
@@ -57,11 +64,27 @@ class MainActivity : AppCompatActivity(), OnDayEditClickListener, OnDayDeleteCli
     }
 
 
+    // On return to main screen from DayEntryActivity, update the appropriate DayEntry within the dayLog and notify adapter.
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (data != null) {
+            if (data.hasExtra("EXTRA_DAY")) {
+                Log.d("out", "asdf")
+                val resultDayEntry : DayEntry = data.getSerializableExtra("EXTRA_DAY") as DayEntry
+                val position : Int = data.getIntExtra("EXTRA_POSITION", dayLog.size-1) as Int
+                dayLog[position] = resultDayEntry
+            }
+            dayAdapter.notifyDataSetChanged()
+        }
+    }
+
+
     // Defining function to open Day Entry
     override fun onDayItemClicked(position: Int) {
         val intent = Intent(this, DayEntryActivity::class.java).also {
             it.putExtra("EXTRA_DAY", dayLog[position])
-            startActivity(it)
+            it.putExtra("EXTRA_POSITION", position)
+            startActivityForResult(it,1)
         }
     }
 
@@ -70,4 +93,6 @@ class MainActivity : AppCompatActivity(), OnDayEditClickListener, OnDayDeleteCli
         dayLog.removeAt(position)
         dayAdapter.notifyDataSetChanged()
     }
+
+
 }

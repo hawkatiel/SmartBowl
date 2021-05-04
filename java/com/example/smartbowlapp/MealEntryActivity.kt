@@ -23,26 +23,30 @@ class MealEntryActivity : AppCompatActivity() {
         // Change colors depending on Meal type
         val mealType = intent.getIntExtra("EXTRA_MEALTYPE", 3)
         when (mealType) {
-            1 -> {  // Breakfast colors
+            0 -> {  // Breakfast colors
                 tvMealEntryName.text = "Breakfast"
                 tvMealEntryName.setBackgroundResource(R.color.meal_1)
                 rvMealEntryFoodEntryList.setBackgroundResource(R.color.meal_1_2)
                 btnMealEntryAddFoodEntry.setBackgroundColor(getResources().getColor(R.color.meal_1))
-            } 2 -> { // Lunch colors
+                btnMealEntrySave.setBackgroundColor(getResources().getColor(R.color.meal_1))
+            } 1 -> { // Lunch colors
                 tvMealEntryName.text = "Lunch"
                 tvMealEntryName.setBackgroundResource(R.color.meal_2)
                 rvMealEntryFoodEntryList.setBackgroundResource(R.color.meal_2_2)
                 btnMealEntryAddFoodEntry.setBackgroundColor(getResources().getColor(R.color.meal_2))
-            } 3 -> { // Dinner colors
+            btnMealEntrySave.setBackgroundColor(getResources().getColor(R.color.meal_2))
+            } 2 -> { // Dinner colors
                 tvMealEntryName.text = "Dinner"
                 tvMealEntryName.setBackgroundResource(R.color.meal_3)
                 rvMealEntryFoodEntryList.setBackgroundResource(R.color.meal_3_2)
                 btnMealEntryAddFoodEntry.setBackgroundColor(getResources().getColor(R.color.meal_3))
-            } 4 -> { // Snack colors
+            btnMealEntrySave.setBackgroundColor(getResources().getColor(R.color.meal_3))
+            } 3 -> { // Snack colors
                 tvMealEntryName.text = "Snacks"
                 tvMealEntryName.setBackgroundResource(R.color.meal_4)
                 rvMealEntryFoodEntryList.setBackgroundResource(R.color.meal_4_2)
                 btnMealEntryAddFoodEntry.setBackgroundColor(getResources().getColor(R.color.meal_4))
+            btnMealEntrySave.setBackgroundColor(getResources().getColor(R.color.meal_4))
             }
         }
 
