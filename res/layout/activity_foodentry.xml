@@ -215,11 +215,11 @@
         android:stateListAnimator="@null"
         android:text="Smart Add"
         android:textAllCaps="false"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnFoodEntrySave" />
 
     <Button
         android:id="@+id/btnFoodEntrySave"
@@ -228,13 +228,13 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:stateListAnimator="@null"
-        android:text="Save Entry"
+        android:text="Save"
         android:textAllCaps="false"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"  />
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
