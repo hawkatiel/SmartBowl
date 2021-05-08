@@ -40,16 +40,18 @@
         tools:ignore="RtlCompat" />
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tvFoodEntryServingValue"
-        android:layout_width="60dp"
+        android:layout_width="100dp"
         android:layout_height="0dp"
         android:gravity="bottom"
         android:paddingStart="10dp"
         android:text="0"
         android:textColor="@color/lightgray"
         android:textSize="22sp"
+        android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryServingLabel"
         app:layout_constraintStart_toEndOf="@+id/tvFoodEntryServingLabel"
-        app:layout_constraintTop_toTopOf="@+id/tvFoodEntryServingLabel" />
+        app:layout_constraintTop_toTopOf="@+id/tvFoodEntryServingLabel"
+        tools:ignore="RtlCompat" />
     <TextView
         android:id="@+id/tvFoodEntryServingLabelUnit"
         android:layout_width="0dp"
@@ -84,7 +86,7 @@
         tools:ignore="RtlCompat" />
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tvFoodEntryCaloriesValue"
-        android:layout_width="60dp"
+        android:layout_width="100dp"
         android:layout_height="0dp"
         android:gravity="bottom"
         android:paddingStart="10dp"
@@ -92,9 +94,11 @@
         android:text="0"
         android:textColor="@color/lightgray"
         android:textSize="22sp"
+        android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="@+id/tvFoodEntryCaloriesLabel"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/tvFoodEntryCaloriesLabel" />
+        app:layout_constraintTop_toTopOf="@+id/tvFoodEntryCaloriesLabel"
+        tools:ignore="RtlCompat" />
     <TextView
         android:id="@+id/tvFoodEntryCaloriesLabelUnit"
         android:layout_width="0dp"

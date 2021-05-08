@@ -6,32 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="70dp">
 
-    <Button
-        android:id="@+id/btnFoodEntryEdit"
+    <TextView
+        android:id="@+id/tvFoodEntryEdit"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/white"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
         android:text="Potato"
-        android:textSize="20sp"
-        android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="@color/lightgray"
-        app:cornerRadius="0dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnFoodEntryDelete"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <Button
         android:id="@+id/btnFoodEntryDelete"
         android:layout_width="70dp"
-        android:layout_height="0dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/white"
         android:text="X"
         android:textColor="@color/lightgray"
         android:textSize="20sp"
         app:cornerRadius="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

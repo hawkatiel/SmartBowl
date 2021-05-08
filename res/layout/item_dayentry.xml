@@ -6,24 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="70dp">
 
-
-    <!-- Old button Button
-        android:id="@+id/btnDayEntryEdit"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/white"
-        android:text="New Entry"
-        android:textSize="25sp"
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-        android:textColor="@color/lightgray"
-        app:cornerRadius="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnDayEntryDelete"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-        -->
-
     <TextView
         android:id="@+id/tvDayEntryEdit"
         android:layout_width="0dp"
@@ -34,7 +16,7 @@
         android:text="New Entry"
         android:textAllCaps="false"
         android:textColor="@color/lightgray"
-        android:textSize="25sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnDayEntryDelete"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,4 +38,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
