@@ -1,64 +1,60 @@
 package com.example.smartbowlapp
 
-import kotlinx.android.synthetic.main.activity_dayentry.*
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import kotlinx.android.synthetic.main.activity_dayentry.*
+
 import android.content.Intent
 import android.widget.Button
-import kotlin.math.roundToLong
 
 class DayEntryActivity : AppCompatActivity() {
+
+    var currentDayEntry : DayEntry = DayEntry()
+    var currentPosition : Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dayentry)
+        Log.d("out", "DayEntry entered")
 
         // Action Bar Support
         val actionBar = supportActionBar
         actionBar!!.title = "Day Entry"       // Set Action Bar title
-        actionBar.setDisplayHomeAsUpEnabled(false)   // Turn on Back Button
+        actionBar.setDisplayHomeAsUpEnabled(false)
 
 
         // Loading Day Entry data from the intent
-        var currentDayEntry = intent.getSerializableExtra("EXTRA_DAY") as DayEntry
-        val currentPosition = intent.getIntExtra("EXTRA_POSITION", 0) as Int
+        currentDayEntry = intent.getSerializableExtra("EXTRA_DAY") as DayEntry
+        currentPosition = intent.getIntExtra("EXTRA_POSITION", 0) as Int
         currentDayEntry.updateAllValues()
-        tvDayEntryDate.setText(currentDayEntry.date)
-        tvDayEntryCaloriesValue.text = "%.2f".format(currentDayEntry.totalCalories)
-        tvDayEntryCarbsValue.text = "%.2f".format(currentDayEntry.totalCarbs)
-        tvDayEntryFatsValue.text = "%.2f".format(currentDayEntry.totalFats)
-        tvDayEntryProteinValue.text = "%.2f".format(currentDayEntry.totalProtein)
-        tvDayEntryBreakfastCalValue.text = "%.2f".format(currentDayEntry.mealEntries[0].totalCalories)
-        tvDayEntryLunchCalValue.text = "%.2f".format(currentDayEntry.mealEntries[1].totalCalories)
-        tvDayEntryDinnerCalValue.text = "%.2f".format(currentDayEntry.mealEntries[2].totalCalories)
-        tvDayEntrySnacksCalValue.text = "%.2f".format(currentDayEntry.mealEntries[3].totalCalories)
-
-        /*
-         */
+        updateDayEntryActivity()
 
 
         // Meal Buttons. Passing the meal type as well.
         btnDayEntryBreakfast.setOnClickListener {
             Intent(this, MealEntryActivity::class.java).also {
-                it.putExtra("EXTRA_MEALTYPE", 0)
-                startActivity(it)
+                it.putExtra("EXTRA_MEAL", currentDayEntry.mealEntries[0])
+                startActivityForResult(it, 0)
             }
         }
         btnDayEntryLunch.setOnClickListener {
             Intent(this, MealEntryActivity::class.java).also {
-                it.putExtra("EXTRA_MEALTYPE", 1)
-                startActivity(it)
+                it.putExtra("EXTRA_MEAL", currentDayEntry.mealEntries[1])
+                startActivityForResult(it, 1)
             }
         }
         btnDayEntryDinner.setOnClickListener {
             Intent(this, MealEntryActivity::class.java).also {
-                it.putExtra("EXTRA_MEALTYPE", 2)
-                startActivity(it)
+                it.putExtra("EXTRA_MEAL", currentDayEntry.mealEntries[2])
+                startActivityForResult(it, 2)
             }
         }
         btnDayEntrySnacks.setOnClickListener {
             Intent(this, MealEntryActivity::class.java).also {
-                it.putExtra("EXTRA_MEALTYPE", 3)
-                startActivity(it)
+                it.putExtra("EXTRA_MEAL", currentDayEntry.mealEntries[3])
+                startActivityForResult(it, 3)
             }
         }
 
@@ -73,16 +69,23 @@ class DayEntryActivity : AppCompatActivity() {
             finish()
         }
 
+    }
 
-        fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-            super.onActivityResult(requestCode, resultCode, data)
-            currentDayEntry.date = tvDayEntryDate.text.toString()
-            val data = Intent()
-            data.putExtra("EXTRA_DAY", currentDayEntry)
-            data.putExtra("EXTRA_POSITION", currentPosition)
-            setResult(RESULT_OK, data)
-            finish()
-        }
+    fun updateDayEntryActivity() {
+        tvDayEntryDate.setText(currentDayEntry.date)
+        tvDayEntryCaloriesValue.text = "%.2f".format(currentDayEntry.totalCalories)
+        tvDayEntryCarbsValue.text = "%.2f".format(currentDayEntry.totalCarbs)
+        tvDayEntryFatsValue.text = "%.2f".format(currentDayEntry.totalFats)
+        tvDayEntryProteinValue.text = "%.2f".format(currentDayEntry.totalProtein)
+        tvDayEntryBreakfastCalValue.text = "%.2f".format(currentDayEntry.mealEntries[0].totalCalories)
+        tvDayEntryLunchCalValue.text = "%.2f".format(currentDayEntry.mealEntries[1].totalCalories)
+        tvDayEntryDinnerCalValue.text = "%.2f".format(currentDayEntry.mealEntries[2].totalCalories)
+        tvDayEntrySnacksCalValue.text = "%.2f".format(currentDayEntry.mealEntries[3].totalCalories)
+    }
 
+
+    // On return from MealEntryActivity, update the relevant MealEntry.
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
