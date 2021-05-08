@@ -48,4 +48,8 @@ data class DayEntry(
                 mealEntries[2].totalProtein +
                 mealEntries[3].totalProtein
     }
+
+    operator fun set(mealType: Int, value: MealEntry) {
+        mealEntries[mealType] = value
+    }
 }

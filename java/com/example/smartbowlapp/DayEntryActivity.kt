@@ -17,7 +17,7 @@ class DayEntryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dayentry)
-        Log.d("out", "DayEntry entered")
+        Log.d("out", "DayEntryActivity: entered")
 
         // Action Bar Support
         val actionBar = supportActionBar
@@ -72,6 +72,7 @@ class DayEntryActivity : AppCompatActivity() {
     }
 
     fun updateDayEntryActivity() {
+        currentDayEntry.updateAllValues()
         tvDayEntryDate.setText(currentDayEntry.date)
         tvDayEntryCaloriesValue.text = "%.2f".format(currentDayEntry.totalCalories)
         tvDayEntryCarbsValue.text = "%.2f".format(currentDayEntry.totalCarbs)
@@ -87,5 +88,16 @@ class DayEntryActivity : AppCompatActivity() {
     // On return from MealEntryActivity, update the relevant MealEntry.
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+//        Log.d("out", "DayEntryActivity: on activity result")
+        if (data != null) {
+//            Log.d("out", "DayEntryActivity: data is not null")
+            if (data.hasExtra("EXTRA_MEAL")) {
+                Log.d("out", "DayEntryActivity: MealEntry successfully saved")
+                val resultMealEntry: MealEntry = data.getSerializableExtra("EXTRA_MEAL") as MealEntry
+                val mealType = requestCode
+                currentDayEntry[mealType] = resultMealEntry
+            }
+        }
+        updateDayEntryActivity()
     }
 }

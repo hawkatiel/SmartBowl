@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), OnDayEditClickListener, OnDayDeleteCli
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("out", "MainActivity entered")
+        Log.d("out", "MainActivity: entered")
 
         // Action Bar Support
         val actionBar = supportActionBar
@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity(), OnDayEditClickListener, OnDayDeleteCli
         rvDayLog.layoutManager = LinearLayoutManager(this)
         rvDayLog.adapter = dayAdapter
         dayAdapter.notifyDataSetChanged()
-        Log.d("out", dayLog.size.toString() + " items in the day list")
-        Log.d("out", dayAdapter.itemCount.toString() + " items in the day adapter")
+//        Log.d("out", dayLog.size.toString() + " items in the day list")
+//        Log.d("out", dayAdapter.itemCount.toString() + " items in the day adapter")
 
         // AddDayEntry Button.
         // Setting the button's onClick listener to create an Intent to open Meal Entry Activity. In the same motion, it executes the Intent.
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity(), OnDayEditClickListener, OnDayDeleteCli
         super.onActivityResult(requestCode, resultCode, data)
         if (data != null) {
             if (data.hasExtra("EXTRA_DAY")) {
-                Log.d("out", "asdf")
+                Log.d("out", "DayEntry successfully saved")
                 val resultDayEntry : DayEntry = data.getSerializableExtra("EXTRA_DAY") as DayEntry
                 val position : Int = data.getIntExtra("EXTRA_POSITION", dayLog.size-1) as Int
                 dayLog[position] = resultDayEntry
