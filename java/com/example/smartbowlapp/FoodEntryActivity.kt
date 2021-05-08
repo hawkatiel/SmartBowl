@@ -1,37 +1,41 @@
 package com.example.smartbowlapp
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.content.Intent
-import android.widget.Button
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_foodentry.*
 
-var currentFoodEntry = FoodEntry()
+import android.content.Intent
+import android.widget.Button
 
 class FoodEntryActivity : AppCompatActivity() {
+
+    var currentFoodEntry : FoodEntry = FoodEntry()
+    var currentPosition : Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_foodentry)
+        Log.d("out", "FoodEntry entered")
 
         // Action Bar Support
         val actionBar = supportActionBar
         actionBar!!.title = "Food Entry"       // Set Action Bar title
-        actionBar.setDisplayHomeAsUpEnabled(false)   // Turn on Back Button
+        actionBar.setDisplayHomeAsUpEnabled(false)
+
 
         // Loading the food entry!
-        // Check if this instance is a new entry or not. If true, go ahead and update the screen with the default values for a new food entry
-        var newEntry = intent.getBooleanExtra("EXTRA_NEWENTRY", false)
-        if (newEntry) {
-            updateFoodEntryActivity()
-        } else {    // Otherwise pull data for the associated food entry from files
-            //var currentFoodEntry = [figure out how to copy data from files based on the button that was clicked. I guess we're passing something to identify it']
-            updateFoodEntryActivity()
-        }
+        currentFoodEntry = intent.getSerializableExtra("EXTRA_FOOD") as FoodEntry
+        currentPosition = intent.getIntExtra("EXTRA_POSITION", 0) as Int
+        updateFoodEntryActivity()
+
+
 
         // Camera Button
         btnFoodEntryAutoAdd.setOnClickListener {
             Intent(this, CameraActivity::class.java).also {
-                startActivity(it)
+                startActivityForResult(it,1)
             }
         }
 
