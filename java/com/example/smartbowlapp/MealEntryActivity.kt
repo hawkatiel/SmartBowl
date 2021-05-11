@@ -11,8 +11,13 @@ import android.widget.Button
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.smartbowlapp.R.*
+import com.example.smartbowlapp.foodlog.FoodAdapter
+import com.example.smartbowlapp.foodlog.OnFoodDeleteClickListener
+import com.example.smartbowlapp.foodlog.OnFoodEditClickListener
+import com.example.smartbowlapp.models.FoodEntry
+import com.example.smartbowlapp.models.MealEntry
 
-class MealEntryActivity : AppCompatActivity(), OnFoodEditClickListener, OnFoodDeleteClickListener  {
+class MealEntryActivity : AppCompatActivity(), OnFoodEditClickListener, OnFoodDeleteClickListener {
 
     var foodLog = ArrayList<FoodEntry>()
     var foodAdapter = FoodAdapter(foodLog, onFoodEditClickListener = this, onFoodDeleteClickListener = this)

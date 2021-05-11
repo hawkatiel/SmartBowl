@@ -1,4 +1,4 @@
-package com.example.smartbowlapp
+package com.example.smartbowlapp.models
 
 import java.io.Serializable
 

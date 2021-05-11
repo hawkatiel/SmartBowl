@@ -7,7 +7,8 @@ import android.util.Log
 import kotlinx.android.synthetic.main.activity_dayentry.*
 
 import android.content.Intent
-import android.widget.Button
+import com.example.smartbowlapp.models.DayEntry
+import com.example.smartbowlapp.models.MealEntry
 
 class DayEntryActivity : AppCompatActivity() {
 

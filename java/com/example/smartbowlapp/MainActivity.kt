@@ -12,8 +12,11 @@ import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 
 // File W/R imports
-import android.content.Context
-import java.io.*
+import com.example.smartbowlapp.daylogadapter.DayAdapter
+import com.example.smartbowlapp.daylogadapter.OnDayDeleteClickListener
+import com.example.smartbowlapp.daylogadapter.OnDayEditClickListener
+import com.example.smartbowlapp.models.DayEntry
+import com.example.smartbowlapp.models.FoodEntry
 
 
 class MainActivity : AppCompatActivity(), OnDayEditClickListener, OnDayDeleteClickListener {

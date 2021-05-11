@@ -7,7 +7,7 @@ import android.util.Log
 import kotlinx.android.synthetic.main.activity_foodentry.*
 
 import android.content.Intent
-import android.widget.Button
+import com.example.smartbowlapp.models.FoodEntry
 
 class FoodEntryActivity : AppCompatActivity() {
 
@@ -17,7 +17,7 @@ class FoodEntryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_foodentry)
-        Log.d("out", "FoodEntry entered")
+        Log.d("out", "FoodEntryActivity: entered")
 
         // Action Bar Support
         val actionBar = supportActionBar
@@ -28,7 +28,7 @@ class FoodEntryActivity : AppCompatActivity() {
         // Loading the food entry!
         currentFoodEntry = intent.getSerializableExtra("EXTRA_FOOD") as FoodEntry
         currentPosition = intent.getIntExtra("EXTRA_POSITION", 0) as Int
-        updateFoodEntryActivity()
+        updateFoodEntryActivityFields()
 
 
 
@@ -41,12 +41,16 @@ class FoodEntryActivity : AppCompatActivity() {
 
         // Save Entry Button
         btnFoodEntrySave.setOnClickListener {
-            // Save currentFoodEntry to file???
-            // Back out of this activity
+            updateFoodEntryData()
+            val data = Intent()
+            data.putExtra("EXTRA_FOOD", currentFoodEntry)
+            data.putExtra("EXTRA_POSITION", currentPosition)
+            setResult(RESULT_OK, data)
+            finish()
         }
     }
 
-    fun updateFoodEntryActivity () {
+    fun updateFoodEntryActivityFields () {
         etFoodEntryName.setText(currentFoodEntry.foodName)
         tvFoodEntryServingValue.setText(currentFoodEntry.servingSize.toString())
 
@@ -55,5 +59,26 @@ class FoodEntryActivity : AppCompatActivity() {
         tvFoodEntryFatsValue.setText(currentFoodEntry.totalFats.toString())
         tvFoodEntryProteinValue.setText(currentFoodEntry.totalProtein.toString())
     }
+
+    fun updateFoodEntryData () {
+        currentFoodEntry.foodName = etFoodEntryName.text.toString()
+        try {
+            currentFoodEntry.servingSize = tvFoodEntryServingValue.text.toString().toDouble()
+        } finally {}
+        try {
+            currentFoodEntry.totalCalories = tvFoodEntryCaloriesValue.text.toString().toDouble()
+        } finally {}
+        try {
+            currentFoodEntry.totalCarbs = tvFoodEntryCarbsValue.text.toString().toDouble()
+        } finally {}
+        try {
+            currentFoodEntry.totalFats = tvFoodEntryFatsValue.text.toString().toDouble()
+        } finally {}
+        try {
+            currentFoodEntry.totalProtein = tvFoodEntryProteinValue.text.toString().toDouble()
+        } finally {}
+    }
+
+
 }
 
