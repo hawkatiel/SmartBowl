@@ -7,6 +7,7 @@
         android:required="true" /> <!-- And permissions to r/w to storage -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -32,7 +33,7 @@
             android:parentActivityName=".DayEntryActivity" />
         <activity
             android:name=".FoodEntryActivity"
-            android:parentActivityName=".MealEntryActivity"></activity>
+            android:parentActivityName=".MealEntryActivity"/>
         <activity
             android:name=".CameraActivity"
             android:parentActivityName=".FoodEntryActivity" />
